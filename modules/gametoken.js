@@ -1,6 +1,6 @@
 let token;
-function getToken() {
-  fetch("https://opentdb.com/api_token.php?command=request")
+async function getToken() {
+  return fetch("https://opentdb.com/api_token.php?command=request")
     .then((response) => response.json())
     .then((data) => {
       token = data.token;

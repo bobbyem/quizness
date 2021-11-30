@@ -10,13 +10,61 @@
     <title>Quizness</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://kit.fontawesome.com/7655c4921d.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main>
-      <header>
-        <section id="menu"></section>
-      </header>
+      <section id="menu">
+        <h1>Difficulty Level</h1>
+        <select name="difficulty" id="difficulty-selector">
+          <option value="any" selected>Whatever</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        <h1>Category</h1>
+        <select name="category" id="category-selector">
+          <option value="any" selected>Whatever</option>
+          <option value="9">General Knowledge</option>
+          <option value="10">Books</option>
+          <option value="11">Film</option>
+          <option value="12">Music</option>
+          <option value="13">Musical & Theater</option>
+          <option value="14">TV</option>
+          <option value="15">Video Games</option>
+          <option value="16">Board Games</option>
+          <option value="17">Science & Nature</option>
+          <option value="18">The power of Math</option>
+          <option value="19">Mythology</option>
+          <option value="20">Sports(blä)</option>
+          <option value="21">Geography</option>
+          <option value="22">History</option>
+          <option value="23">Politics</option>
+          <option value="24">Art</option>
+          <option value="25">Animals</option>
+          <option value="26">Vehicles</option>
+          <option value="27">Comics</option>
+          <option value="26">Gadgets</option>
+          <option value="26">Anime & Manga</option>
+          <option value="26">Cartoons & Animation</option>
+        </select>
+        <h1>Question type</h1>
+        <select name="difficulty" id="type-selector">
+          <option value="any" selected>Whatever</option>
+          <option value="multiple">Multiple Choice</option>
+          <option value="boolean">True/False</option>
+        </select>
+        <nav>
+          <i id="settings" class="fas fa-cog"></i>
+          <section id="score-display">
+            <i id="star" class="fas fa-star"></i>
+          </section>
+        </nav>
+      </section>
       <section id="game">
         <section id="question"></section>
         <section id="answers"></section>
