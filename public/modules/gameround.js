@@ -4,6 +4,8 @@ import updateScoreDisplay from "./scoredisplay.js";
 //Elements
 const questionArea = document.getElementById("question");
 const answerArea = document.getElementById("answers");
+const correctSound = new Audio("./cash.wav");
+const wrongSound = new Audio("./wrong.wav");
 let wrongAnswers = [];
 let correctAnswer;
 let gameOver = true;
@@ -18,7 +20,6 @@ async function createGameRound() {
   correctAnswer = "";
   //Create question and answers
   let question = await getQuestion().then((value) => {
-    console.log(value);
     //Create and add Category to game
     let category = document.createElement("h1");
     category.innerHTML = value.category;
@@ -54,7 +55,7 @@ async function createGameRound() {
     randomize();
   });
 }
-
+//Functions
 function randomize() {
   let answers = [...wrongAnswers, correctAnswer];
   while (answers.length > 0) {
@@ -62,7 +63,6 @@ function randomize() {
     answerArea.appendChild(answers[index]);
     answers.splice(index, 1);
   }
-  console.log(answers);
 }
 
 function correct() {
@@ -74,8 +74,8 @@ function correct() {
   });
   playerStats.addScore(300);
   playerStats.addWin();
+  correctSound.play();
   updateScoreDisplay();
-  vibrate();
   reset();
 }
 
@@ -89,6 +89,7 @@ function wrong() {
   playerStats.addScore(-300);
   playerStats.addLoss();
   updateScoreDisplay();
+  wrongSound.play();
   vibrate();
   reset();
 }

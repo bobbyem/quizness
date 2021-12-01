@@ -7,6 +7,10 @@ scoreDisplay.appendChild(scoreText);
 //Functions
 function updateScoreDisplay() {
   scoreText.innerHTML = playerStats.score;
+  scoreDisplay.classList.add("catching");
+  setTimeout(() => {
+    scoreDisplay.classList.remove("catching");
+  }, 1000);
 }
 
 export default updateScoreDisplay;
