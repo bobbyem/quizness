@@ -76,7 +76,6 @@ h2 {
 }
 
 #settings:hover {
-  animation: rotate 2s infinite linear;
   color: var(--color-accent-2);
   transition: 0.5s;
 }

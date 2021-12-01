@@ -75,6 +75,7 @@ function correct() {
   playerStats.addScore(300);
   playerStats.addWin();
   updateScoreDisplay();
+  vibrate();
   reset();
 }
 
@@ -88,6 +89,7 @@ function wrong() {
   playerStats.addScore(-300);
   playerStats.addLoss();
   updateScoreDisplay();
+  vibrate();
   reset();
 }
 
@@ -97,6 +99,10 @@ function reset() {
   setTimeout(() => {
     createGameRound();
   }, 5000);
+}
+
+function vibrate() {
+  navigator.vibrate(300);
 }
 
 export default createGameRound;
