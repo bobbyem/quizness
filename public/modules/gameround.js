@@ -90,7 +90,6 @@ function wrong() {
   playerStats.addLoss();
   updateScoreDisplay();
   wrongSound.play();
-  vibrate();
   reset();
 }
 
@@ -102,8 +101,5 @@ function reset() {
   }, 5000);
 }
 
-function vibrate() {
-  navigator.vibrate(300);
-}
 
 export default createGameRound;
